@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Nordams";
+    src: url("../fonts/Nordams-Bold.otf");
+  }
+  /* @font-face {
+    font-family: "Amatic SC";
+    src: url("../fonts/AmaticSC-Bold.ttf");
+  } */
+
+  @font-face {
+    font-family: 'Architects Daughter', cursive;
+    src: url("../fonts/ArchitectsDaughter-Regular.ttf");
+  }

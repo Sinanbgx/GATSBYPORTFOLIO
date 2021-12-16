@@ -1,0 +1,50 @@
+{
+    "NilsB": {
+        "title": "Nils Bourdon",
+        "subTitle": "Musician Portfolio",
+        "projectImage": "../images/projectImages/nilsB.png",
+        "contributions": "Front-end Development, UX Research, SEO",
+        "description": "A website created for a client in order to represent the artist, their work and provide additional contact options for event organizers.",
+        "link": "projects/NilsBourdon/index.html"
+    },
+    "DayWorker": {
+        "title": "DayWorker",
+        "subTitle": "Company Website",
+        "projectImage": "projectImages/dayWorker.jpg",
+        "contributions": "Wordpress Development",
+        "description": "This was the second project I had under my intership, In which we had to create a company website by redesigning and optimizing a WordPress theme.",
+        "link": "https://dayworker.dk/en/home-2/"
+    },
+        "VideoCoaching": {
+        "title": "Video Coaching",
+        "subTitle": "Internship Project",
+        "projectImage": "projectImages/videoCoaching.jpg",
+        "contributions": "Front End Development, UX design",
+        "description": "This is the first front-end project of my internship that we developed together with one of my colleagues, for a company that provides video lectures on a wide variety of topics.",
+        "link": "https://videocoaching.enprocenternok.dk/"
+    },
+    "WSCBAU": {
+        "title": "WSC-BAU",
+        "subTitle": "Student Project",
+        "projectImage": "projectImages/wscBau.jpg",
+        "contributions": "Website Development, UX Research",
+        "description": "The project was created by 4  students for our second-semester exam, for a company that's operating within the housing market situated in Hungary.",
+        "link": "../projects/WSCBAU/en/index.html"
+    },
+    "UXBulgaria": {
+        "title": "UXBulgaria",
+        "subTitle": "Instagram Page",
+        "projectImage": "projectImages/uxBulgaria.jpg",
+        "contributions": "UX Research/ Prototyping",
+        "description": "uxBulgaria aims to make UI / UX design accessible to the Bulgarian community through social media.",
+        "link": "https://www.instagram.com/uxbulgaria/"
+    },
+    "UCNAmbassadors": {
+        "title": "UCN Ambassadors",
+        "subTitle": "Student Project",
+        "projectImage": "projectImages/UCNAmb.jpg",
+        "contributions": "Front End Dev.  UX Research/ Prototyping",
+        "description": "A project developed for the UCN ambassadors that present them and their events, through micro-interactions, on scroll animations, and straightforward navigation.",
+        "link": "../../projects/UCNAmbassadors/index.html"
+    }
+}

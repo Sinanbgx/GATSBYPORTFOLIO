@@ -1,0 +1,673 @@
+@font-face {
+  font-family: "Nordams";
+  src: url("../fonts/Nordams-Bold.otf");
+}
+
+/* @font-face {
+    font-family: "Amatic SC";
+    src: url("../fonts/AmaticSC-Bold.ttf");
+  } */
+@font-face {
+  font-family: 'Architects Daughter', cursive;
+  src: url("../fonts/ArchitectsDaughter-Regular.ttf");
+}
+
+.App {
+  position: fixed;
+  top: 0vw;
+  left: 10vw;
+}
+
+body {
+  background: #101422;
+  margin: 0;
+  color: white;
+  transition: all 1s ease-in-out;
+  overflow-x: hidden;
+  font-family: roboto, sans-serif;
+}
+
+.cursor {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 850px) {
+  .cursor {
+    display: none;
+  }
+}
+
+.cursor__ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.cursor__ball circle {
+  fill: #2c3f83;
+}
+
+.cursor__ball--big {
+  mix-blend-mode: difference;
+}
+
+.cursor__ball--big circle {
+  fill: #f7f7f7;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue orange;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(10, 10, 10, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+  border: 3px solid black;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+button {
+  background-color: #2a3353;
+  border: none;
+  border-top: 1px solid #2a3353;
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  padding: 2%;
+  font-size: 15px;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  color: #2a3353;
+  background-color: #ffffff;
+}
+
+.mainContent {
+  top: 0 !important;
+  display: flex;
+}
+
+.mainContent .mainContent__scrollCTA {
+  position: fixed;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContent .mainContent__scrollCTA .mainContent__scrollCTAtext {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.mainContent .mainContent__scrollCTA svg {
+  width: 32.27px;
+  height: 58.061px;
+}
+
+.mainContent .mainContent__titleSection {
+  width: 70vw;
+  display: flex;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mainContent .mainContent__titleSection .mainContent__title {
+  font-size: 133px;
+  margin-left: 2vw;
+  font-family: "Nordams", georgia, serif;
+}
+
+.mainContent .mainContent__titleSection .mainContent__subTitle {
+  font-weight: 100;
+  margin-left: 2vw;
+  margin-top: -5px;
+  font-size: 24px;
+  color: #c5c5c5;
+}
+
+.mainContent .mainContent__projects {
+  background-color: rgba(197, 197, 197, 0);
+  position: relative;
+  z-index: 1;
+  -webkit-box-shadow: -16px 0px 36px -9px rgba(0, 0, 0, 0.32);
+  box-shadow: -10px 0px 11px 0px rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  width: 30vw;
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer {
+  position: fixed;
+  top: 0px;
+  z-index: 1;
+  margin-left: -10vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 100vh;
+  width: 470vw;
+  min-width: 4763px;
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectContainer {
+  position: relative;
+  display: flex;
+  max-height: 900px;
+  height: 35vw;
+  min-height: 420px;
+  min-width: 660px;
+  width: 60vw;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 8vw;
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectInfo {
+  width: 30%;
+  position: relative;
+  display: none;
+  z-index: 1;
+  color: white;
+  padding-right: 20px;
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectInfo .mainContent__projectSubTitle {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectInfo .mainContent__projectDescription {
+  font-size: 13.5px;
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__projectImage {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__titleLink {
+  display: none;
+  height: 10%;
+  position: relative;
+  z-index: 1;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__titleLink .mainContent__projectLink {
+  min-height: 50px;
+  min-width: 86px;
+  position: relative;
+  top: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: roboto, sans-serif;
+  border: none;
+  border-radius: 0px 0px 20px 20px;
+  background-color: #2a3353;
+  transition: all 0.2s ease-in-out;
+  color: white;
+  font-size: 13.5px;
+  font-weight: 900;
+  user-select: none;
+  cursor: pointer;
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__titleLink .mainContent__projectLink:hover {
+  background-color: white;
+  color: #2a3353;
+  top: 0px;
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__titleLink .mainContent__projectTitle {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.mainContent__video {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  z-index: 0;
+}
+
+.mainContent__video video {
+  height: 100%;
+  width: 100%;
+}
+
+.mobileProjects {
+  height: 200vh;
+  display: none;
+  width: 100vw;
+  padding: 1vw;
+  background: red;
+}
+
+.navigation {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  z-index: 6;
+  right: 2vw;
+  top: 2vw;
+}
+
+.navigation .navigationButton {
+  background-color: #2a3353;
+  border: none;
+  padding: 6px 12px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  overflow: hidden;
+  border-radius: 20px;
+  font-size: 22px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.navigation .navigationButton:hover {
+  color: #2a3353;
+  background-color: #ffffff;
+}
+
+.contactContainer__contactSection {
+  display: none;
+  min-height: 400px;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  min-width: 440px;
+}
+
+.contactContainer__contactSection .contactContainer__contactPersonalMail {
+  display: flex;
+}
+
+.contactContainer__contactSection .contactContainer__contactPersonalMail .contactContainer__contactCTA {
+  width: 50%;
+}
+
+.contactContainer__contactSection .contactContainer__contactPersonalMail .contactContainer__contactCTA h2 {
+  font-size: 23px;
+  font-weight: 400;
+  width: 80%;
+}
+
+.contactContainer__contactSection .contactContainer__contactPersonalMail .contactContainer__contactMailto {
+  height: 55px;
+  width: 50%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.contactContainer__contactSection .contactContainer__contactPersonalMail .contactContainer__contactMailto a {
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+  padding: 10px;
+  background-color: #1d243c80;
+  transition: all 0.2s ease-in-out;
+}
+
+.contactContainer__contactSection .contactContainer__contactPersonalMail .contactContainer__contactMailto a:hover {
+  color: #2a3353;
+  background-color: #ffffff;
+}
+
+.contactContainer__contactSection .contactContainer__contactForm {
+  display: flex;
+  margin-top: 2vw;
+}
+
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft,
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft input,
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft textarea,
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight input,
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight textarea {
+  border: none;
+  margin-top: 10px;
+  padding: 5px;
+  padding-left: 10px;
+  font-family: Roboto, sans-serif;
+}
+
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft input,
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight input {
+  margin-bottom: 15px;
+  margin-right: 20px;
+  border-radius: 2px;
+  height: 34px;
+  font-size: 15px;
+}
+
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft textarea,
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight textarea {
+  height: 104.2px;
+  padding-top: 10px;
+  resize: none;
+  font-size: 15px;
+}
+
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft label,
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight label {
+  font-size: 17px;
+}
+
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft ::placeholder,
+.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight ::placeholder {
+  font-size: 13px;
+}
+
+@media only screen and (min-width: 1550px) {
+  .mainContent .mainContent__titleSection .mainContent__title {
+    font-size: 9vw;
+  }
+  .mainContent .mainContent__titleSection .mainContent__subTitle {
+    font-size: 1.7vw;
+  }
+  .mainContent .mainContent__scrollCTA .mainContent__scrollCTAtext {
+    font-size: 1.2vw;
+  }
+  .mainContent .mainContent__scrollCTA svg {
+    height: 4vw;
+    width: 2vw;
+  }
+  .mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectInfo .mainContent__projectSubTitle {
+    font-size: 1.6vw;
+  }
+  .mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectInfo .mainContent__projectDescription {
+    font-size: 1vw;
+  }
+  .mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__titleLink .mainContent__projectTitle {
+    font-size: 2vw;
+  }
+  .mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__titleLink .mainContent__projectLink {
+    height: 3vw;
+    width: 5vw;
+    font-size: 0.9vw;
+  }
+  .navigation .navigationButton {
+    font-size: 1.5vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .contactContainer__contactSection {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contactContainer__contactSection {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .contactContainer__contactPersonalMail {
+    flex-direction: column;
+    margin: 5%;
+    margin-bottom: 10%;
+  }
+  .contactContainer__contactCTA {
+    width: 100%;
+  }
+  .contactContainer__contactCTA
+h2 {
+    width: 100%;
+  }
+  .contactContainer__contactMailto {
+    width: 100%;
+  }
+  .contactContainer__contactForm {
+    flex-direction: column;
+    margin: 5%;
+  }
+  .contactContainer__contactFormColumnRight {
+    width: 100%;
+  }
+  .contactContainer__contactFormColumnRight
+input {
+    margin-right: 0;
+  }
+  .contactContainer__contactSection {
+    min-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainContent {
+    height: 100vh;
+    max-width: none;
+  }
+  .mainContent .mainContent__titleSection {
+    width: 100vw;
+    align-items: center;
+  }
+  .mainContent .mainContent__titleSection .mainContent__title {
+    font-size: 170px;
+  }
+  .mainContent .mainContent__titleSection .mainContent__subTitle {
+    font-size: 27px;
+    margin-left: 0;
+  }
+  .mainContent .mainContent__projects {
+    display: none;
+  }
+}
+
+.aboutMeMain__animationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+
+.aboutMeMain__videoBackground {
+  position: fixed;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.aboutMeMain__storyContainer {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  height: 25vw;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 15vw;
+}
+
+.aboutMeMain__storyContainer .aboutMeMain__image {
+  position: relative;
+  display: none;
+  z-index: 2;
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+
+.aboutMeMain__storyContainer .aboutMeMain__animationsCollection {
+  position: relative;
+  height: 100%;
+  display: none;
+  z-index: 2;
+  border: 2px solid white;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.aboutMeMain__storyContainer .aboutMeMain__animationUxBulgaria {
+  position: relative;
+  display: none;
+  height: 100%;
+  z-index: 2;
+  border: 2px solid white;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.aboutMeMain__storyContainer .aboutMeMain__storyTextContainer {
+  position: absolute;
+  background-color: white;
+  opacity: 0;
+  border-radius: 0 0 15px 15px;
+  height: 7vh;
+  padding: 12px 20px;
+  width: 40vw;
+  min-width: 555px;
+  bottom: calc(-7vh - 24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutMeMain__storyContainer .aboutMeMain__storyTextContainer .aboutMeMain__storyText {
+  color: #222222;
+  font-size: 1em;
+  text-align: center;
+  font-family: "Architects Daughter", cursive;
+}
+
+.aboutMeMain__radioButtons {
+  position: absolute;
+  right: -50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutMeMain__radioButtons input[type="radio"] {
+  appearance: none;
+  margin: 8px 0px;
+  width: 30px;
+  height: 30px;
+  background: #dae0f8;
+  box-shadow: inset 0 0 0 .4em white;
+  border-radius: 50%;
+  transition: .2s;
+  cursor: pointer;
+  color: #363945;
+}
+
+.aboutMeMain__radioButtons input[type="radio"]:hover {
+  background: #2a3353;
+  box-shadow: inset 0 0 0 .6em white;
+}
+
+.aboutMeMain__radioButtons input[type="radio"]:checked {
+  background: #2a3353;
+  box-shadow: inset 0 0 0 .4em white;
+}
+
+.aboutMeMain {
+  display: flex;
+  height: 100vh;
+  background: #101422;
+}
+
+.aboutMeMain aboutMeMain__animationContainer {
+  position: fixed;
+}
+
+.aboutMeMain video {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .notReadyYetMate {
+    position: fixed;
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    background-color: #101422;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .notReadyYetMate h1, .notReadyYetMate h2 {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 25px 25px  0 0;
+    width: 80%;
+    max-width: 375px;
+    color: black;
+    padding: 15px;
+    font-size: 1.1em;
+  }
+  .notReadyYetMate h2 {
+    font-size: 0.9em;
+    border-radius: 0 0 25px 25px;
+    font-weight: 100;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .notReadyYetMate {
+    display: none;
+  }
+}
