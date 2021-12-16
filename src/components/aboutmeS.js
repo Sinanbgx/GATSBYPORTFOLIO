@@ -4,7 +4,7 @@ import { useEffect, useState  } from "react"
 import videoBackground from '../videos/about me/final.mp4';
 import videoAnimCollection from '../videos/about me/animationCollection.mp4';
 import videoUxBulgaria from '../videos/about me/uxbulgariaAnimation.mp4';
-import photoSM from '../images/about me/test.jpg';
+import photoSM from '../images/about me/sinanMehmedPhoto.jpg';
 
 
 
@@ -18,6 +18,9 @@ function ABOUTMES() {
 
           useEffect(() => {
 
+            if(document.querySelector('.aboutMeMain__image')){
+              document.body.style.overflowY = "hidden";
+            }
 
 //CURSOR INTERACTION    
 if (window.innerWidth > 850)  {      
@@ -101,7 +104,6 @@ function onMouseHoverOutRB() {
         let entryAnim = gsap.timeline({});
         entryAnim.fromTo(".aboutMeMain--entryAnimationContainer", {opacity: 0}, {opacity: 1,delay:3, duration:0.2});
         entryAnim.fromTo(".aboutMeMain--entryAnimationImage", {opacity: 0, y:100, display:'none'}, {opacity: 1, y:0, display:'flex', duration:0.4},'<');
-        entryAnim.fromTo(".aboutMeMain--entryAnimationImage", {boxShadow:"1px -1px 36px 0px rgba(255,255,255,0)",}, {boxShadow:"1px 0px 20px 0px rgba(255,255,255,0.50)", duration:1},'<');
         entryAnim.fromTo(".aboutMeMain__radioButtons", {opacity: 0, x:-100}, {opacity: 1, x:0,delay:0.5, duration:0.2},'<');
         entryAnim.fromTo(".aboutMeMain--entryAnimationTxtContainer", {opacity: 0, y:-100, display:'none'}, {opacity: 1, y:0, duration:0.6,display:'flex', delay:0.2},'<');
         
@@ -124,18 +126,15 @@ function onMouseHoverOutRB() {
     let animationFS = gsap.timeline({paused:true});
     animationFS.fromTo(".aboutMeMain__storyText",{text:sentences[1]}, {text:sentences[0], duration:0.1 });
     animationFS.fromTo(".aboutMeMain__image", { y:100, display:'none'}, { y:0, display:'flex', duration:0.2});
-    animationFS.fromTo(".aboutMeMain__image", {boxShadow:"1px -1px 36px 0px rgba(255,255,255,0)",}, {boxShadow:"1px 0px 20px 0px rgba(255,255,255,0.50)", duration:0.5});
     animationFS.fromTo(".aboutMeMain__storyTextContainer", {opacity: 0, y:-100, display:'none'}, {opacity: 1, y:0,display:'flex', duration:0.4},'<');
 
     let animationFS2 = gsap.timeline({paused:true});
     animationFS2.fromTo(".aboutMeMain__animationsCollection",{ y:100, display:'none'}, { y:0, duration:0.2, display:'flex' });
-    animationFS2.fromTo(".aboutMeMain__animationsCollection", {boxShadow:"1px -1px 36px 0px rgba(255,255,255,0)",}, {boxShadow:"1px 0px 20px 0px rgba(255,255,255,0.50)", duration:0.5});
     animationFS2.fromTo(".aboutMeMain__storyText",{text:sentences[0]}, {text:sentences[1], duration:0.1 },'<');
     animationFS2.fromTo(".aboutMeMain__storyTextContainer",{opacity: 0, y:-100, display:'none'}, {opacity:1, y:0,display:'flex', duration:0.4 },'<');
 
     let animationFS3 = gsap.timeline({paused:true});
     animationFS3.fromTo(".aboutMeMain__animationUxBulgaria",{ y:100, display:'none'}, { y:0, duration:0.2, display:'flex' });
-    animationFS3.fromTo(".aboutMeMain__animationUxBulgaria", {boxShadow:"1px -1px 36px 0px rgba(255,255,255,0)",}, {boxShadow:"1px 0px 20px 0px rgba(255,255,255,0.50)", duration:0.5});
     animationFS3.fromTo(".aboutMeMain__storyText",{text:sentences[0]}, {text:sentences[2], duration:0.1 },'<');
     animationFS3.fromTo(".aboutMeMain__storyTextContainer",{opacity: 0, y:-100, display:'none'}, {opacity:1, y:0,display:'flex', duration:0.4 },'<');
 

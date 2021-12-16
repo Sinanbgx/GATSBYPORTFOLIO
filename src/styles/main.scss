@@ -47,11 +47,7 @@ body {
   }
 
 
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: blue orange;
-  }
-  
+ 
   /* Works on Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 15px;
@@ -262,13 +258,13 @@ button {
     }
 }
 
-.mainContent__video{
+.mainContent__video {
     position: fixed;
-    height:100vh;
-    width:100vw;
-
-    top:0;
-    z-index:0;
+    height: 80vh;
+    width: 100vw;
+    right: 11.8vw;
+    top: 4vw;
+    z-index: 0;
     video{
         height:100%;
         width:100%;

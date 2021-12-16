@@ -56,11 +56,6 @@ body {
   fill: #f7f7f7;
 }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: blue orange;
-}
-
 /* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 15px;
@@ -87,6 +82,7 @@ p {
 button {
   background-color: #2a3353;
   border: none;
+  cursor: pointer;
   border-top: 1px solid #2a3353;
   color: white;
   font-family: Roboto, sans-serif;
@@ -268,9 +264,10 @@ button:hover {
 
 .mainContent__video {
   position: fixed;
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
-  top: 0;
+  right: 11.8vw;
+  top: 4vw;
   z-index: 0;
 }
 
@@ -319,8 +316,8 @@ button:hover {
   min-height: 400px;
   flex-direction: column;
   justify-content: center;
-  width: 90%;
-  min-width: 440px;
+  width: 45vw;
+  min-width: 626px;
 }
 
 .contactContainer__contactSection .contactContainer__contactPersonalMail {
@@ -441,50 +438,6 @@ button:hover {
   }
 }
 
-@media only screen and (max-width: 1000px) {
-  .contactContainer__contactSection {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .contactContainer__contactSection {
-    width: 50%;
-  }
-}
-
-@media only screen and (max-width: 460px) {
-  .contactContainer__contactPersonalMail {
-    flex-direction: column;
-    margin: 5%;
-    margin-bottom: 10%;
-  }
-  .contactContainer__contactCTA {
-    width: 100%;
-  }
-  .contactContainer__contactCTA
-h2 {
-    width: 100%;
-  }
-  .contactContainer__contactMailto {
-    width: 100%;
-  }
-  .contactContainer__contactForm {
-    flex-direction: column;
-    margin: 5%;
-  }
-  .contactContainer__contactFormColumnRight {
-    width: 100%;
-  }
-  .contactContainer__contactFormColumnRight
-input {
-    margin-right: 0;
-  }
-  .contactContainer__contactSection {
-    min-width: 100%;
-  }
-}
-
 @media only screen and (max-width: 768px) {
   .mainContent {
     height: 100vh;
@@ -570,6 +523,7 @@ input {
   background-color: white;
   opacity: 0;
   border-radius: 0 0 15px 15px;
+  box-shadow: inset 1px 10px 9px -6px black;
   height: 7vh;
   padding: 12px 20px;
   width: 40vw;
