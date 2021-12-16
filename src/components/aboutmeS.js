@@ -221,7 +221,7 @@ function onMouseHoverOutRB() {
    <div className="aboutMeMain ">
 
    <div className="notReadyYetMate">
-   <h1>IDK there wandering explorer, the website will be adapted for smaller devices soon.</h1>
+   <h1>Hello there wandering explorer, the website will be adapted for smaller devices soon.</h1>
    <h2>Thank you for being patient! </h2>
    </div>
 
