@@ -11,7 +11,7 @@ function Homepage() {
    <h1>Hello there wandering explorer, the website will be adapted for smaller devices soon.</h1>
    <h2>Thank you for being patient! </h2>
    </div>
-      <Link to="/aboutMe/">
+      <Link to="/aboutMe3D/"> 
         <nav className="navigation ">
           <button 
  className="navigationButton">about me</button>

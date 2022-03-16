@@ -260,7 +260,7 @@ function onMouseHoverOutRB() {
             <div className="contactContainer__contactMailto hoverable">
               <a href="mailto:sinanbgx@gmail.com?subject=How can I help you?&body=Please, provide more details here..."
               target="_blank" rel="noopener noreferrer">
-                Use a preffered email service
+                Use a preferred email service
               </a>
             </div>
           </div>

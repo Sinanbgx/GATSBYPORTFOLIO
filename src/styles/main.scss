@@ -259,6 +259,7 @@ button {
 }
 
 .mainContent__video {
+    display:none; /* Hide the video its because of the the scroll bug */
     position: fixed;
     height: 80vh;
     width: 100vw;
