@@ -6,8 +6,32 @@
     top:0vw;
     left:10vw;
 }
-
-
+/*new about me*/
+.splineScene{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 1;
+    
+}
+.videoContainer{
+    height:100vh;
+    width:100vw;
+    position:fixed;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    .landscapeVideo{
+        width:730px;
+    }
+    .verticalVideo{
+        position:absolute;
+        width: 210px;
+    right:10%;
+    }
+}
+/*new about me*/
 body {
 
     background: #101422;
