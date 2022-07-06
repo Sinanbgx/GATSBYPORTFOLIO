@@ -18,6 +18,35 @@
   left: 10vw;
 }
 
+/*new about me*/
+.splineScene {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 1;
+}
+
+.videoContainer {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.videoContainer .landscapeVideo {
+  width: 730px;
+}
+
+.videoContainer .verticalVideo {
+  position: absolute;
+  width: 210px;
+  right: 10%;
+}
+
+/*new about me*/
 body {
   background: #101422;
   margin: 0;
@@ -263,6 +292,8 @@ button:hover {
 }
 
 .mainContent__video {
+  display: none;
+  /* Hide the video its because of the the scroll bug */
   position: fixed;
   height: 80vh;
   width: 100vw;
