@@ -1,103 +1,20 @@
 @font-face {
-  font-family: "Nordams";
-  src: url("../fonts/Nordams-Bold.otf");
+  font-family: "MedulaOne-Regular";
+  src: url("../fonts/MedulaOne-Regular.ttf");
 }
 
-/* @font-face {
-    font-family: "Amatic SC";
-    src: url("../fonts/AmaticSC-Bold.ttf");
-  } */
 @font-face {
-  font-family: 'Architects Daughter', cursive;
-  src: url("../fonts/ArchitectsDaughter-Regular.ttf");
+  font-family: 'Teko-Regular';
+  src: url("../fonts/Teko-Regular.ttf");
 }
 
-.App {
-  position: fixed;
-  top: 0vw;
-  left: 10vw;
-}
-
-/*new about me*/
-.splineScene {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  z-index: 1;
-}
-
-.videoContainer {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 0;
-}
-
-.videoContainer .landscapeVideo {
-  width: 730px;
-}
-
-.videoContainer .verticalVideo {
-  position: absolute;
-  width: 210px;
-  right: 10%;
-}
-
-/*new about me*/
 body {
-  background: #101422;
+  background: #141414;
   margin: 0;
   color: white;
   transition: all 1s ease-in-out;
   overflow-x: hidden;
   font-family: roboto, sans-serif;
-}
-
-.cursor {
-  pointer-events: none;
-}
-
-@media screen and (max-width: 850px) {
-  .cursor {
-    display: none;
-  }
-}
-
-.cursor__ball {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-.cursor__ball circle {
-  fill: #2c3f83;
-}
-
-.cursor__ball--big {
-  mix-blend-mode: difference;
-}
-
-.cursor__ball--big circle {
-  fill: #f7f7f7;
-}
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 15px;
-}
-
-*::-webkit-scrollbar-track {
-  background: rgba(10, 10, 10, 0);
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: white;
-  border-radius: 20px;
-  border: 3px solid black;
 }
 
 h1,
@@ -126,6 +43,7 @@ button:hover {
   background-color: #ffffff;
 }
 
+/*desktop home*/
 .mainContent {
   top: 0 !important;
   display: flex;
@@ -166,7 +84,8 @@ button:hover {
 .mainContent .mainContent__titleSection .mainContent__title {
   font-size: 133px;
   margin-left: 2vw;
-  font-family: "Nordams", georgia, serif;
+  font-weight: bold;
+  font-family: "MedulaOne-Regular", georgia, serif;
 }
 
 .mainContent .mainContent__titleSection .mainContent__subTitle {
@@ -243,12 +162,36 @@ button:hover {
 .mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__projectImage {
   height: 100%;
   width: 100%;
-  border-radius: 20px;
+  opacity: 0;
+  border-radius: 20px 20px 0px 0px;
   position: relative;
   z-index: 2;
-  opacity: 1;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__projectImage--firstProject {
+  background-image: url("../images/projectImages/nilsB.webp");
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__projectImage--secondProject {
+  background-image: url("../images/projectImages/wscBau.webp");
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__projectImage--thirdProject {
+  background-image: url("../images/projectImages/UCNAmb.webp");
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__projectImage--fourthProject {
+  background-image: url("../images/projectImages/uxBulgaria.webp");
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__projectImage--fifthProject {
+  background-image: url("../images/projectImages/taliaferroVid.webp");
+}
+
+.mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__projectImage--sixthProject {
+  background-image: url("../images/projectImages/tuborgwebsiteActual.webp");
 }
 
 .mainContent .mainContent__projects .mainContent__scrollContainer .mainContent__projectImageTitleLink .mainContent__titleLink {
@@ -291,28 +234,15 @@ button:hover {
   font-weight: 900;
 }
 
-.mainContent__video {
-  display: none;
-  /* Hide the video its because of the the scroll bug */
+/*desktop home*/
+.mainContent__spacer {
+  display: block;
   position: fixed;
   height: 80vh;
   width: 100vw;
   right: 11.8vw;
   top: 4vw;
   z-index: 0;
-}
-
-.mainContent__video video {
-  height: 100%;
-  width: 100%;
-}
-
-.mobileProjects {
-  height: 200vh;
-  display: none;
-  width: 100vw;
-  padding: 1vw;
-  background: red;
 }
 
 .navigation {
@@ -340,100 +270,6 @@ button:hover {
 .navigation .navigationButton:hover {
   color: #2a3353;
   background-color: #ffffff;
-}
-
-.contactContainer__contactSection {
-  display: none;
-  min-height: 400px;
-  flex-direction: column;
-  justify-content: center;
-  width: 45vw;
-  min-width: 626px;
-}
-
-.contactContainer__contactSection .contactContainer__contactPersonalMail {
-  display: flex;
-}
-
-.contactContainer__contactSection .contactContainer__contactPersonalMail .contactContainer__contactCTA {
-  width: 50%;
-}
-
-.contactContainer__contactSection .contactContainer__contactPersonalMail .contactContainer__contactCTA h2 {
-  font-size: 23px;
-  font-weight: 400;
-  width: 80%;
-}
-
-.contactContainer__contactSection .contactContainer__contactPersonalMail .contactContainer__contactMailto {
-  height: 55px;
-  width: 50%;
-  display: flex;
-  align-items: flex-end;
-}
-
-.contactContainer__contactSection .contactContainer__contactPersonalMail .contactContainer__contactMailto a {
-  color: white;
-  text-decoration: none;
-  font-size: 19px;
-  padding: 10px;
-  background-color: #1d243c80;
-  transition: all 0.2s ease-in-out;
-}
-
-.contactContainer__contactSection .contactContainer__contactPersonalMail .contactContainer__contactMailto a:hover {
-  color: #2a3353;
-  background-color: #ffffff;
-}
-
-.contactContainer__contactSection .contactContainer__contactForm {
-  display: flex;
-  margin-top: 2vw;
-}
-
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft,
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
-
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft input,
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft textarea,
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight input,
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight textarea {
-  border: none;
-  margin-top: 10px;
-  padding: 5px;
-  padding-left: 10px;
-  font-family: Roboto, sans-serif;
-}
-
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft input,
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight input {
-  margin-bottom: 15px;
-  margin-right: 20px;
-  border-radius: 2px;
-  height: 34px;
-  font-size: 15px;
-}
-
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft textarea,
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight textarea {
-  height: 104.2px;
-  padding-top: 10px;
-  resize: none;
-  font-size: 15px;
-}
-
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft label,
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight label {
-  font-size: 17px;
-}
-
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnLeft ::placeholder,
-.contactContainer__contactSection .contactContainer__contactForm .contactContainer__contactFormColumnRight ::placeholder {
-  font-size: 13px;
 }
 
 @media only screen and (min-width: 1550px) {
@@ -470,16 +306,17 @@ button:hover {
 }
 
 @media only screen and (max-width: 768px) {
+  .mainContent__spacer {
+    display: none;
+  }
   .mainContent {
-    height: 100vh;
-    max-width: none;
+    height: 100vh !important;
+    max-width: none !important;
+    position: static !important;
   }
   .mainContent .mainContent__titleSection {
     width: 100vw;
     align-items: center;
-  }
-  .mainContent .mainContent__titleSection .mainContent__title {
-    font-size: 170px;
   }
   .mainContent .mainContent__titleSection .mainContent__subTitle {
     font-size: 27px;
@@ -488,120 +325,45 @@ button:hover {
   .mainContent .mainContent__projects {
     display: none;
   }
+  .mainContent .mainContent__scrollCTA {
+    position: absolute;
+  }
 }
 
-.aboutMeMain__animationContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
+@media only screen and (max-width: 500px) {
+  .mainContent .mainContent__titleSection .mainContent__title {
+    font-size: 100px;
+  }
+  .mainContent .mainContent__titleSection .mainContent__subTitle {
+    font-size: 20px;
+  }
 }
 
-.aboutMeMain__videoBackground {
-  position: fixed;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+@media only screen and (max-width: 415px) {
+  .mainContent .mainContent__titleSection {
+    width: 100vw;
+    align-items: initial;
+  }
+  .mainContent .mainContent__titleSection .mainContent__title {
+    font-size: 145px;
+    line-height: 120px;
+    margin-left: 3vw;
+  }
+  .mainContent .mainContent__titleSection .mainContent__subTitle {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 3vw;
+  }
 }
 
-.aboutMeMain__storyContainer {
-  position: absolute;
-  opacity: 0;
-  z-index: 1;
-  height: 25vw;
-  min-height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 15vw;
-}
-
-.aboutMeMain__storyContainer .aboutMeMain__image {
-  position: relative;
-  display: none;
-  z-index: 2;
-  width: 100%;
-  border: 2px solid white;
-  border-radius: 15px;
-}
-
-.aboutMeMain__storyContainer .aboutMeMain__animationsCollection {
-  position: relative;
-  height: 100%;
-  display: none;
-  z-index: 2;
-  border: 2px solid white;
-  border-radius: 15px;
-  object-fit: cover;
-}
-
-.aboutMeMain__storyContainer .aboutMeMain__animationUxBulgaria {
-  position: relative;
-  display: none;
-  height: 100%;
-  z-index: 2;
-  border: 2px solid white;
-  border-radius: 15px;
-  object-fit: cover;
-}
-
-.aboutMeMain__storyContainer .aboutMeMain__storyTextContainer {
-  position: absolute;
-  background-color: white;
-  opacity: 0;
-  border-radius: 0 0 15px 15px;
-  box-shadow: inset 1px 10px 9px -6px black;
-  height: 7vh;
-  padding: 12px 20px;
-  width: 40vw;
-  min-width: 555px;
-  bottom: calc(-7vh - 24px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.aboutMeMain__storyContainer .aboutMeMain__storyTextContainer .aboutMeMain__storyText {
-  color: #222222;
-  font-size: 1em;
-  text-align: center;
-  font-family: "Architects Daughter", cursive;
-}
-
-.aboutMeMain__radioButtons {
-  position: absolute;
-  right: -50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.aboutMeMain__radioButtons input[type="radio"] {
-  appearance: none;
-  margin: 8px 0px;
-  width: 30px;
-  height: 30px;
-  background: #dae0f8;
-  box-shadow: inset 0 0 0 .4em white;
-  border-radius: 50%;
-  transition: .2s;
-  cursor: pointer;
-  color: #363945;
-}
-
-.aboutMeMain__radioButtons input[type="radio"]:hover {
-  background: #2a3353;
-  box-shadow: inset 0 0 0 .6em white;
-}
-
-.aboutMeMain__radioButtons input[type="radio"]:checked {
-  background: #2a3353;
-  box-shadow: inset 0 0 0 .4em white;
+@media only screen and (max-width: 335px) {
+  .mainContent .mainContent__titleSection .mainContent__title {
+    font-size: 135px;
+    line-height: 100px;
+  }
+  .mainContent .mainContent__titleSection .mainContent__subTitle {
+    font-size: 18px;
+  }
 }
 
 .aboutMeMain {
@@ -622,37 +384,637 @@ button:hover {
   z-index: 0;
 }
 
+.mobileHomepage {
+  display: none;
+}
+
+/* homepage for mobile */
 @media only screen and (max-width: 768px) {
-  .notReadyYetMate {
-    position: fixed;
-    z-index: 10;
-    height: 100vh;
+  .mobileHomepage {
+    display: flex;
+    flex-direction: column;
     width: 100vw;
-    background-color: #101422;
+  }
+  .mobileHomepage .mobileHomepage__projectsContainer {
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
-  .notReadyYetMate h1, .notReadyYetMate h2 {
-    text-align: center;
-    background-color: #ffffff;
-    border-radius: 25px 25px  0 0;
-    width: 80%;
-    max-width: 375px;
-    color: black;
-    padding: 15px;
-    font-size: 1.1em;
+  .mobileHomepage .mobileHomepage__3DScene {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
   }
-  .notReadyYetMate h2 {
-    font-size: 0.9em;
-    border-radius: 0 0 25px 25px;
-    font-weight: 100;
+  .mobileHomepage .mobileHomepage__projects {
+    width: 80vw;
+    transform: translateY(100px);
+    opacity: 0;
+    position: relative;
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .notReadyYetMate {
+@media only screen and (max-width: 768px) and (max-width: 420px) {
+  .mobileHomepage .mobileHomepage__projects {
+    width: 93vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mobileHomepage .mobileHomepage__imageContainer {
+    height: 40vh;
+  }
+}
+
+@media only screen and (max-width: 768px) and (max-width: 500px) {
+  .mobileHomepage .mobileHomepage__imageContainer {
+    height: 30vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mobileHomepage .mobileHomepage__projectImage {
+    position: relative;
+    border-radius: 20px 20px 0 0;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+  }
+  .mobileHomepage .mobileHomepage__projectImage--firstProject {
+    background-image: url("../images/projectImages/nilsB.webp");
+  }
+  .mobileHomepage .mobileHomepage__projectImage--secondProject {
+    background-image: url("../images/projectImages/wscBau.webp");
+  }
+  .mobileHomepage .mobileHomepage__projectImage--thirdProject {
+    background-image: url("../images/projectImages/UCNAmb.webp");
+  }
+  .mobileHomepage .mobileHomepage__projectImage--fourthProject {
+    background-image: url("../images/projectImages/uxBulgaria.webp");
+  }
+  .mobileHomepage .mobileHomepage__projectImage--fifthProject {
+    background-image: url("../images/projectImages/taliaferroVid.webp");
+  }
+  .mobileHomepage .mobileHomepage__projectImage--sixthProject {
+    background-image: url("../images/projectImages/tuborgwebsiteActual.webp");
+  }
+  .mobileHomepage__projectLink {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0px 0px 20px 20px;
+    background-color: #2a3353;
+    transition: all 0.2s ease-in-out;
+    color: white;
+    font-size: 15.5px;
+    font-weight: 900;
+    z-index: 0;
+    cursor: pointer;
+  }
+  .mobileHomepage__projectLink:hover {
+    background-color: white;
+    color: #2a3353;
+    top: -10px;
+  }
+  .mobileHomepage__projectInfo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .mobileHomepage__projectInfo hr {
+    width: 100%;
+    margin: 20px 0px;
+  }
+  .mobileHomepage__projectInfo .mobileHomepage__titleSection {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+  .mobileHomepage__projectInfo .mobileHomepage__titleSection hr {
+    justify-self: end;
+    width: 100%;
+    margin: 5px 0 0 0;
+  }
+  .mobileHomepage__projectInfo .mobileHomepage__number {
+    font-size: 8.5em;
+    margin-right: 10px;
+    color: white;
+    font-family: "MedulaOne-Regular", georgia, serif;
+    line-height: 90px;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+  }
+}
+
+@media only screen and (max-width: 768px) and (max-width: 480px) {
+  .mobileHomepage__projectInfo .mobileHomepage__number {
+    font-size: 7em;
+    line-height: 70px;
+  }
+}
+
+@media only screen and (max-width: 768px) and (max-width: 450px) {
+  .mobileHomepage__projectInfo .mobileHomepage__number {
+    font-size: 6em;
+    line-height: 65px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mobileHomepage__projectInfo .mobileHomepage__title {
+    width: 65vw;
+  }
+}
+
+@media only screen and (max-width: 768px) and (max-width: 420px) {
+  .mobileHomepage__projectInfo .mobileHomepage__title {
+    width: 75vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mobileHomepage__projectInfo .mobileHomepage__title h3 {
+    line-height: 60px;
+    font-size: 6em;
+    font-family: "Teko-Regular", georgia, serif;
+  }
+}
+
+@media only screen and (max-width: 768px) and (max-width: 560px) {
+  .mobileHomepage__projectInfo .mobileHomepage__title h3 {
+    font-size: 5em;
+    line-height: 50px;
+  }
+}
+
+@media only screen and (max-width: 768px) and (max-width: 480px) {
+  .mobileHomepage__projectInfo .mobileHomepage__title h3 {
+    font-size: 4.5em;
+    line-height: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) and (max-width: 400px) {
+  .mobileHomepage__projectInfo .mobileHomepage__title h3 {
+    font-size: 3.9em;
+    line-height: 35px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mobileHomepage__projectInfo .mobileHomepage__projectDescription {
+    color: white;
+    font-size: 1.05em;
+  }
+}
+
+@media only screen and (max-width: 768px) and (max-width: 550px) {
+  .mobileHomepage__projectInfo .mobileHomepage__projectDescription {
+    font-size: 0.9em;
+  }
+}
+
+@media only screen and (max-width: 768px) and (max-width: 450px) {
+  .mobileHomepage__projectInfo .mobileHomepage__projectDescription {
+    font-size: 0.85em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mobileHomepage__secondScene {
+    height: 50vh;
+  }
+  .mobileHomepage__tvCTA {
+    position: relative;
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobileHomepage__tvCTA h3 {
+    text-align: center;
+  }
+}
+
+/* homepage for mobile */
+/*new about me*/
+.aboutMeContainer__loadingScreen {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.aboutMeContainer__loadingScreen .aboutMeContainer__counter p {
+  font-family: "Teko-Regular", georgia, serif;
+  font-style: italic;
+  font-size: 10em;
+}
+
+.aboutMeContainer__loadingScreen .aboutMeContainer__loadingText {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: -300px;
+  color: white;
+  user-select: none;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
+.aboutMeContainer__loadingScreen .aboutMeContainer__loadingText p {
+  font-family: "Teko-Regular", georgia, serif;
+  font-size: 15em;
+}
+
+@media only screen and (max-width: 600px) {
+  .aboutMeContainer__loadingScreen .aboutMeContainer__loadingText p {
+    font-size: 10em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .aboutMeContainer__loadingScreen .aboutMeContainer__loadingText p {
+    font-size: 7em;
+  }
+}
+
+.aboutMeContainer__loadingScreen .aboutMeContainer__loadingText--flipped {
+  top: initial !important;
+  bottom: 0;
+  right: -290px !important;
+  left: initial !important;
+}
+
+.aboutMeContainer__loadingScreen .aboutMeContainer__loadingText--center {
+  top: initial;
+  left: initial;
+  font-style: italic;
+  opacity: 15%;
+}
+
+@media screen and (max-width: 750px) {
+  .aboutMeContainer__loadingScreen .aboutMeContainer__loadingText--center {
+    opacity: 100%;
+  }
+}
+
+.aboutMeContainer__splineScene {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.aboutMeContainer__splineScene--enableMobile {
+  display: none;
+}
+
+.aboutMeContainer__landscapeVideo--disabled {
+  display: none !important;
+}
+
+@media screen and (max-width: 750px) {
+  .aboutMeContainer__splineScene--disableMobile {
     display: none;
   }
+  .aboutMeContainer__counter--disableMobile {
+    display: none !important;
+  }
+  .aboutMeContainer__splineScene--enableMobile {
+    display: block;
+  }
+}
+
+.aboutMeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutMeContainer__videoContainer {
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  align-items: center;
+}
+
+.aboutMeContainer__videoContainer .aboutMeContainer__landscapeVideo {
+  display: flex;
+}
+
+@media screen and (max-width: 350px) {
+  .aboutMeContainer__videoContainer .aboutMeContainer__landscapeVideo {
+    width: 34.5vh;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 390px) {
+  .aboutMeContainer__videoContainer .aboutMeContainer__landscapeVideo {
+    width: 38.5vh;
+  }
+}
+
+@media screen and (min-width: 390px) and (max-width: 440px) {
+  .aboutMeContainer__videoContainer .aboutMeContainer__landscapeVideo {
+    width: 41vh;
+  }
+}
+
+@media screen and (min-width: 440px) and (max-width: 540px) {
+  .aboutMeContainer__videoContainer .aboutMeContainer__landscapeVideo {
+    width: 48vh;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 640px) {
+  .aboutMeContainer__videoContainer .aboutMeContainer__landscapeVideo {
+    width: 56vh;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 750px) {
+  .aboutMeContainer__videoContainer .aboutMeContainer__landscapeVideo {
+    width: 56vh;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 950px) {
+  .aboutMeContainer__videoContainer .aboutMeContainer__landscapeVideo {
+    width: 48vh;
+  }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1024px) {
+  .aboutMeContainer__videoContainer .aboutMeContainer__landscapeVideo {
+    width: 59vh;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .aboutMeContainer__videoContainer .aboutMeContainer__landscapeVideo {
+    width: 66vh;
+  }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+  .aboutMeContainer__videoContainer .aboutMeContainer__landscapeVideo {
+    width: 84vh;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .aboutMeContainer__videoContainer .aboutMeContainer__landscapeVideo {
+    width: 66vh;
+  }
+}
+
+.aboutMeContainer__recommendations {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  z-index: 7;
+  background-color: #000000ab;
+  display: none;
+  opacity: 0;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__nextRec {
+  margin-bottom: 80px;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__nextRec button {
+  font-size: 1.1em;
+  padding: 15px 5vw;
+  border-radius: 30px;
+  background: white;
+  color: #2a3353;
+  border: none;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__nextRec button:hover {
+  background-color: #2a3353;
+  color: white;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__nextRec button:active {
+  background: white;
+  color: #2a3353;
+}
+
+@media only screen and (max-width: 800px) {
+  .aboutMeContainer__recommendations .aboutMeContainer__nextRec button {
+    padding: 15px 20vw;
+  }
+  .aboutMeContainer__recommendations .aboutMeContainer__nextRec button:hover {
+    background-color: white !important;
+    color: #2a3353 !important;
+  }
+  .aboutMeContainer__recommendations .aboutMeContainer__nextRec button:active {
+    color: white !important;
+    background-color: #2a3353 !important;
+  }
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__closePopUp {
+  margin-top: 20px;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__closePopUp button {
+  font-size: 1.2em;
+  transform: translateY(100px);
+  padding: 15px;
+  width: 100vw;
+  background: #101010;
+  color: white;
+  border: none;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__closePopUp button:active {
+  background-color: #101010;
+  color: white;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__closePopUp button:hover {
+  background: white;
+  color: black;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__clickOff {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation {
+  flex-direction: column;
+  overflow: hidden;
+  width: 360px;
+  min-width: 360px;
+  margin: 10px 10px;
+  margin-top: 20vh;
+  border-radius: 15px;
+}
+
+@media only screen and (max-width: 400px) {
+  .aboutMeContainer__recommendations .aboutMeContainer__recommendation {
+    margin: 10px;
+    width: 90vw;
+    min-width: 90vw;
+  }
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__recommendation-writtenBy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__recommendation-writtenBy .aboutMeContainer__recommendation-profileImage {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 15px 0px #020674;
+}
+
+@media only screen and (max-width: 400px) {
+  .aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__recommendation-writtenBy .aboutMeContainer__recommendation-profileImage {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__recommendation-writtenBy .aboutMeContainer__recommendation-profileImage--firstRec {
+  background-image: url("../images/recommendation/dina.webp");
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__recommendation-writtenBy .aboutMeContainer__recommendation-profileImage--secondRec {
+  background-image: url("../images/recommendation/taliaferro.webp");
+  background-position-y: -2.5px;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__recommendation-writtenBy .aboutMeContainer__recommendation-profileImage--thirdRec {
+  background-image: url("../images/recommendation/nils.webp");
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__recommendation-writtenBy .aboutMeContainer__nameTitle {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__recommendation-writtenBy .aboutMeContainer__nameTitle p {
+  color: black;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__recommendation-writtenBy .aboutMeContainer__nameTitle :nth-child(1) {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+@media only screen and (max-width: 400px) {
+  .aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__recommendation-writtenBy .aboutMeContainer__nameTitle :nth-child(1) {
+    font-size: 1.1em;
+  }
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__recommendation-writtenBy .aboutMeContainer__nameTitle :nth-child(2) {
+  font-size: 0.8em;
+  color: #2a3353;
+}
+
+@media only screen and (max-width: 400px) {
+  .aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__recommendation-writtenBy .aboutMeContainer__nameTitle :nth-child(2) {
+    font-size: 0.7em;
+  }
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__text {
+  text-align: center;
+  margin: 30px 30px;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__text p {
+  color: black;
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 400px) {
+  .aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__text {
+    margin: 10px;
+  }
+  .aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__recommendation-information .aboutMeContainer__text p {
+    font-size: 13px;
+  }
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__link button {
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+  position: relative;
+  z-index: 1;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.aboutMeContainer__recommendations .aboutMeContainer__recommendation .aboutMeContainer__link button:hover {
+  background-color: #2a3353;
+  color: white;
+  transform: translateY(-5px);
+}
+
+.aboutMeContainer__hideRec {
+  display: none;
+}
+
+/*new about me*/
+/*404 page*/
+.page404 {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

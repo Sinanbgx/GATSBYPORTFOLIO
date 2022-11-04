@@ -1,24 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
-import video from '../videos/homepage/homepage.mp4';
 
 function Homepage() {
 
     
   return (
     <div>
-      <div className="notReadyYetMate">
-   <h1>Hello there wandering explorer, the website will be adapted for smaller devices soon.</h1>
-   <h2>Thank you for being patient! </h2>
-   </div>
-      <Link to="/aboutMeSpline/"> 
+      <Link to="/aboutMe/"> 
         <nav className="navigation ">
-          <button 
- className="navigationButton">about me</button>
+          <button className="navigationButton">about me</button>
         </nav>
       </Link>
-
-      <div className="mainContent__scrollCTA onScrollOpacity">
+      <div className="mainContent__scrollCTA mainContent--Animate onScrollOpacity">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 42.27 68.061"
@@ -106,16 +99,13 @@ function Homepage() {
         </svg>
         <p className="mainContent__scrollCTAtext">scroll to continue</p>
       </div>
-      <section className="mainContent__titleSection onScrollOpacity">
-        <h1 className="mainContent__title">Sinan Mehmed</h1>
-        <h2 className="mainContent__subTitle">
-          UX/UI Designer and Front-end Developer
+      <section className="mainContent__titleSection mainContent--Animate onScrollOpacity">
+        <h1 className="mainContent__title mainContent--Animate">Sinan Mehmed</h1>
+        <h2 className="mainContent__subTitle mainContent--Animate">
+          Front-end Developer and 3D Artist
         </h2>
       </section>
-      <div className="mainContent__video onScrollOpacity">
-      <video loop autoPlay muted>
-        <source src={video} type="video/mp4" />
-       </video>
+      <div className="mainContent__spacer">
        </div>
     </div>
   )

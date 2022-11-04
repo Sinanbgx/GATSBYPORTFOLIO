@@ -1,116 +1,35 @@
 import React from "react"
 import { gsap, ScrollTrigger } from "gsap/all"
 import { useEffect, useRef } from "react"
-import { graphql, useStaticQuery } from "gatsby"
+// import { graphql, useStaticQuery } from "gatsby"
 import JSONData from "../../src/content/data.json"
-
-// import {getImage} from "gatsby-plugin-image"
-import { convertToBgImage } from "gbimage-bridge"
-import BackgroundImage from "gatsby-background-image"
-// import * as THREE from 'three'
+// import { convertToBgImage } from "gbimage-bridge"
+// import BackgroundImage from "gatsby-background-image"
 
 
 function ProjectSlider() {
-
-  const data = useStaticQuery(
-    graphql`
-      query {
-        firstProjectImage: file(relativePath: { eq: "nilsB.png" }) {
-          childImageSharp {
-            gatsbyImageData(
-              layout: FULL_WIDTH
-              placeholder: BLURRED
-              formats: [WEBP]
-            )
-          }
-        }
-        secondProjectImage: file(relativePath: { eq: "dayWorker.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(
-              layout: FULL_WIDTH
-              placeholder: BLURRED
-              formats: [WEBP]
-            )
-          }
-        }
-        thirdProjectImage: file(relativePath: { eq: "videoCoaching.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(
-              layout: FULL_WIDTH
-              placeholder: BLURRED
-              formats: [WEBP]
-            )
-          }
-        }
-        fourthProjectImage: file(relativePath: { eq: "wscBau.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(
-              layout: FULL_WIDTH
-              placeholder: BLURRED
-              formats: [WEBP]
-            )
-          }
-        }
-        fifthProjectImage: file(relativePath: { eq: "uxBulgaria.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(
-              layout: FULL_WIDTH
-              placeholder: BLURRED
-              formats: [WEBP]
-            )
-          }
-        }
-        sixthProjectImage: file(relativePath: { eq: "UCNAmb.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(
-              layout: FULL_WIDTH
-              placeholder: BLURRED
-              formats: [WEBP]
-            )
-          }
-        }
-      }
-    `
-  )
-
-  const imageData = data.firstProjectImage.childImageSharp.gatsbyImageData
-  const bgImage = convertToBgImage(imageData)
-
-  const imageData2 = data.secondProjectImage.childImageSharp.gatsbyImageData
-  const bgImage2 = convertToBgImage(imageData2)
-
-  const imageData3 = data.thirdProjectImage.childImageSharp.gatsbyImageData
-  const bgImage3 = convertToBgImage(imageData3)
-
-  const imageData4 = data.fourthProjectImage.childImageSharp.gatsbyImageData
-  const bgImage4 = convertToBgImage(imageData4)
-
-  const imageData5 = data.fifthProjectImage.childImageSharp.gatsbyImageData
-  const bgImage5 = convertToBgImage(imageData5)
-
-  const imageData6 = data.sixthProjectImage.childImageSharp.gatsbyImageData
-  const bgImage6 = convertToBgImage(imageData6)
+  gsap.registerPlugin(ScrollTrigger)
 
   function projectLink() {
     window.open(JSONData.NilsB.link)
   }
   function projectLink2() {
-    window.open(JSONData.DayWorker.link)
+    window.open(JSONData.WSCBAU.link)
   }
   function projectLink3() {
-    window.open(JSONData.VideoCoaching.link)
+    window.open(JSONData.UCNAmbassadors.link)
   }
   function projectLink4() {
     //local
-    window.open(JSONData.WSCBAU.link)
+    window.open(JSONData.UXBulgaria.link)
   }
   function projectLink5() {
     //local
-    window.open(JSONData.UXBulgaria.link)
+    window.open(JSONData.Trailer3d.link)
   }
   function projectLink6() {
     //local
-    window.open(JSONData.UCNAmbassadors.link)
+    window.open(JSONData.TuborgAnimation.link)
   }
 
   const scrollContainerRef = useRef(null)
@@ -134,8 +53,10 @@ function ProjectSlider() {
   const projectInfoRef6 = useRef(null)
   const titleLinkRef6 = useRef(null)
 
+
+
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
+    if(window.innerWidth >=768){
     const scrollContainer = scrollContainerRef.current
 
     const projectInfo = projectInfoRef.current
@@ -175,8 +96,8 @@ function ProjectSlider() {
     gsap.to('.mainContent__titleLink', {
       "display": "flex"
     })
-    gsap.fromTo(".mainContent__scrollContainer", {x: 200}, {x:0, duration: 0.5, ease: "power1.out"});
-
+    gsap.fromTo(".mainContent__scrollContainer", {opacity:0, x: 200}, {x:0, opacity:1, duration: 0.5, delay:0.2, ease: "power1.out"});
+    gsap.to(".mainContent__projectImage" ,{opacity:1, duration: 0.1, delay:0.1, ease: "power1.out"});
     
 
     let tl = gsap.timeline({
@@ -482,6 +403,7 @@ function ProjectSlider() {
       opacity: 0,
       y: -100,
     })
+  }
   }, [])
 
   return (
@@ -498,13 +420,7 @@ function ProjectSlider() {
               </p>
             </div>
             <div className="mainContent__projectImageTitleLink">
-              <BackgroundImage
-                Tag="div"
-                className="mainContent__projectImage"
-                 // Spread bgImage into BackgroundImage:
-      {...bgImage}
-      preserveStackingContext
-              ></BackgroundImage>
+            <div className="mainContent__projectImage mainContent__projectImage--firstProject"></div>
               <div ref={titleLinkRef} className="mainContent__titleLink">
                 <h3 className="mainContent__projectTitle">
                   {JSONData.NilsB.title}
@@ -522,23 +438,17 @@ function ProjectSlider() {
           <div className="mainContent__projectContainer second ">
             <div ref={projectInfoRef2} className="mainContent__projectInfo">
               <h4 className="mainContent__projectSubTitle">
-                {JSONData.DayWorker.subTitle}
+                {JSONData.WSCBAU.subTitle}
               </h4>
               <p className="mainContent__projectDescription">
-                {JSONData.DayWorker.description}
+                {JSONData.WSCBAU.description}
               </p>
             </div>
             <div className="mainContent__projectImageTitleLink">
-              <BackgroundImage
-                Tag="div"
-                className="mainContent__projectImage"
-                // Spread bgImage into BackgroundImage:
-      {...bgImage2}
-      preserveStackingContext
-              ></BackgroundImage>
+            <div className="mainContent__projectImage mainContent__projectImage--secondProject"></div>
               <div ref={titleLinkRef2} className="mainContent__titleLink">
                 <h3 className="mainContent__projectTitle">
-                  {JSONData.DayWorker.title}
+                  {JSONData.WSCBAU.title}
                 </h3>
 
                 <button
@@ -553,23 +463,17 @@ function ProjectSlider() {
           <div className="mainContent__projectContainer third ">
             <div ref={projectInfoRef3} className="mainContent__projectInfo">
               <h4 className="mainContent__projectSubTitle">
-                {JSONData.VideoCoaching.subTitle}
+                {JSONData.UCNAmbassadors.subTitle}
               </h4>
               <p className="mainContent__projectDescription">
-                {JSONData.VideoCoaching.description}
+                {JSONData.UCNAmbassadors.description}
               </p>
             </div>
             <div className="mainContent__projectImageTitleLink">
-              <BackgroundImage
-                Tag="div"
-                className="mainContent__projectImage"
-                // Spread bgImage into BackgroundImage:
-      {...bgImage3}
-      preserveStackingContext
-              ></BackgroundImage>
+            <div className="mainContent__projectImage mainContent__projectImage--thirdProject"></div>
               <div ref={titleLinkRef3} className="mainContent__titleLink">
                 <h3 className="mainContent__projectTitle">
-                  {JSONData.VideoCoaching.title}
+                  {JSONData.UCNAmbassadors.title}
                 </h3>
 
                 <button
@@ -584,23 +488,17 @@ function ProjectSlider() {
           <div className="mainContent__projectContainer fourth ">
             <div ref={projectInfoRef4} className="mainContent__projectInfo">
               <h4 className="mainContent__projectSubTitle">
-                {JSONData.WSCBAU.subTitle}
+                {JSONData.UXBulgaria.subTitle}
               </h4>
               <p className="mainContent__projectDescription">
-                {JSONData.WSCBAU.description}
+                {JSONData.UXBulgaria.description}
               </p>
             </div>
             <div className="mainContent__projectImageTitleLink">
-              <BackgroundImage
-                Tag="div"
-                className="mainContent__projectImage"
-                // Spread bgImage into BackgroundImage:
-      {...bgImage4}
-      preserveStackingContext
-              ></BackgroundImage>
+            <div className="mainContent__projectImage mainContent__projectImage--fourthProject"></div>
               <div ref={titleLinkRef4} className="mainContent__titleLink">
                 <h3 className="mainContent__projectTitle">
-                  {JSONData.WSCBAU.title}
+                  {JSONData.UXBulgaria.title}
                 </h3>
 
                 <button
@@ -615,23 +513,17 @@ function ProjectSlider() {
           <div className="mainContent__projectContainer fifth ">
             <div ref={projectInfoRef5} className="mainContent__projectInfo">
               <h4 className="mainContent__projectSubTitle">
-                {JSONData.UXBulgaria.subTitle}
+                {JSONData.Trailer3d.subTitle}
               </h4>
               <p className="mainContent__projectDescription">
-                {JSONData.UXBulgaria.description}
+                {JSONData.Trailer3d.description}
               </p>
             </div>
             <div className="mainContent__projectImageTitleLink">
-              <BackgroundImage
-                Tag="div"
-                className="mainContent__projectImage"
-                // Spread bgImage into BackgroundImage:
-      {...bgImage5}
-      preserveStackingContext
-              ></BackgroundImage>
+            <div className="mainContent__projectImage mainContent__projectImage--fifthProject"></div>
               <div ref={titleLinkRef5} className="mainContent__titleLink">
                 <h3 className="mainContent__projectTitle">
-                  {JSONData.UXBulgaria.title}
+                  {JSONData.Trailer3d.title}
                 </h3>
 
                 <button
@@ -646,23 +538,17 @@ function ProjectSlider() {
           <div className="mainContent__projectContainer sixth ">
             <div ref={projectInfoRef6} className="mainContent__projectInfo">
               <h4 className="mainContent__projectSubTitle">
-                {JSONData.UCNAmbassadors.subTitle}
+                {JSONData.TuborgAnimation.subTitle}
               </h4>
               <p className="mainContent__projectDescription">
-                {JSONData.UCNAmbassadors.description}
+                {JSONData.TuborgAnimation.description}
               </p>
             </div>
             <div className="mainContent__projectImageTitleLink">
-              <BackgroundImage
-                Tag="div"
-                className="mainContent__projectImage"
-                // Spread bgImage into BackgroundImage:
-      {...bgImage6}
-      preserveStackingContext
-              ></BackgroundImage>
+              <div className="mainContent__projectImage mainContent__projectImage--sixthProject"></div>
               <div ref={titleLinkRef6} className="mainContent__titleLink">
                 <h3 className="mainContent__projectTitle">
-                  {JSONData.UCNAmbassadors.title}
+                  {JSONData.TuborgAnimation.title}
                 </h3>
 
                 <button

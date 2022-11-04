@@ -1,6 +1,4 @@
 import * as React from "react"
-
-
 import "../styles/main.scss"
 import Seo from "../components/seo"
 import ProjectSlider from "../components/projectslider"

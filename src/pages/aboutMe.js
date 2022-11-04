@@ -1,8 +1,10 @@
 import * as React from "react"
 import "../styles/main.scss"
 import { Link } from "gatsby"
-import AboutMeS from "../components/aboutmeS"
 import Seo from "../components/seo"
+import Scene from "../components/3DModel"
+
+
 
 const AboutMe = () => (
   <div>
@@ -12,7 +14,7 @@ const AboutMe = () => (
         <button className="navigationButton">home</button>
       </nav>
     </Link>
-    <AboutMeS />
+    <Scene />
   </div>
 )
 

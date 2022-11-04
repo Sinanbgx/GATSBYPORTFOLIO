@@ -1,13 +1,8 @@
-@font-face {
-    font-family: "Nordams";
-    src: url("../fonts/Nordams-Bold.otf");
-  }
-  /* @font-face {
-    font-family: "Amatic SC";
-    src: url("../fonts/AmaticSC-Bold.ttf");
-  } */
-
   @font-face {
-    font-family: 'Architects Daughter', cursive;
-    src: url("../fonts/ArchitectsDaughter-Regular.ttf");
+    font-family: "MedulaOne-Regular";
+    src: url("../fonts/MedulaOne-Regular.ttf");
+  }
+  @font-face {
+    font-family: 'Teko-Regular';
+    src: url("../fonts/Teko-Regular.ttf");
   }

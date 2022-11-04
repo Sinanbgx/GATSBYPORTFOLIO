@@ -4,31 +4,15 @@
         "subTitle": "Musician Portfolio",
         "projectImage": "../images/projectImages/nilsB.png",
         "contributions": "Front-end Development, UX Research, SEO",
-        "description": "A website created for a client in order to represent the artist, their work and provide additional contact options for event organizers.",
+        "description": "A website created for a client to represent the artist, and their work and provide additional contact options for event organizers. Within this project, I got the chance to do user research, prototype and test different designs, and develop the final product.",
         "link": "projects/NilsBourdon/index.html"
-    },
-    "DayWorker": {
-        "title": "DayWorker",
-        "subTitle": "Company Website",
-        "projectImage": "projectImages/dayWorker.jpg",
-        "contributions": "Wordpress Development",
-        "description": "This was the second project I had under my intership, In which we had to create a company website by redesigning and optimizing a WordPress theme.",
-        "link": "https://dayworker.dk/en/home-2/"
-    },
-        "VideoCoaching": {
-        "title": "Video Coaching",
-        "subTitle": "Internship Project",
-        "projectImage": "projectImages/videoCoaching.jpg",
-        "contributions": "Front End Development, UX design",
-        "description": "This is the first front-end project of my internship that we developed together with one of my colleagues, for a company that provides video lectures on a wide variety of topics.",
-        "link": "https://videocoaching.enprocenternok.dk/"
     },
     "WSCBAU": {
         "title": "WSC-BAU",
         "subTitle": "Student Project",
         "projectImage": "projectImages/wscBau.jpg",
         "contributions": "Website Development, UX Research",
-        "description": "The project was created by 4  students for our second-semester exam, for a company that's operating within the housing market situated in Hungary.",
+        "description": "The project was created by 4  students for our second-semester exam, for a company that's operating within the housing market situated in Hungary. For this project I got the chance to do use research and develop the front-end of the website.",
         "link": "../projects/WSCBAU/en/index.html"
     },
     "UXBulgaria": {
@@ -36,15 +20,31 @@
         "subTitle": "Instagram Page",
         "projectImage": "projectImages/uxBulgaria.jpg",
         "contributions": "UX Research/ Prototyping",
-        "description": "uxBulgaria aims to make UI / UX design accessible to the Bulgarian community through social media.",
+        "description": "uxBulgaria is social media page is a page that allows me to research and share different topics wihtin UX/UI. Each post is carefully researched and translated in order to make UX/UI information accessible to the Bulgarian community.",
         "link": "https://www.instagram.com/uxbulgaria/"
     },
     "UCNAmbassadors": {
-        "title": "UCN Ambassadors",
+        "title": "UCN DK",
         "subTitle": "Student Project",
         "projectImage": "projectImages/UCNAmb.jpg",
         "contributions": "Front End Dev.  UX Research/ Prototyping",
-        "description": "A project developed for the UCN ambassadors that present them and their events, through micro-interactions, on scroll animations, and straightforward navigation.",
+        "description": "A project developed for the UCN ambassadors that present them and their events through engaging animations and straightforward navigation. For this project, I have taken part in user research, user testing, and developing the front end of the website. The biggest challenge at that time was figuring out a way to include responsive on-scroll animations that don't hurt the performance of the website.",
         "link": "../../projects/UCNAmbassadors/index.html"
+    },
+    "Trailer3d": {
+        "title": "3D Trailer",
+        "subTitle": "Freelance Project",
+        "projectImage": "projectImages/tuborgwebsiteActual.jpg",
+        "contributions": "Front End Dev.  UX Research/ Prototyping",
+        "description": "This is a 3D animation created for the up-and-coming artist Taliaferro in order to promote his new album. Within this project I got the chance to model, texture and light three different scenes in Blender for the 3 main songs of the album, which I've then edited in After Effects with a CTA for the album.",
+        "link": "https://www.youtube.com/watch?v=BrYvrR9Gv9s&ab_channel=TALIAFERRO"
+    },
+    "TuborgAnimation": {
+        "title": "3D Advert",
+        "subTitle": "Tuborg",
+        "projectImage": "projectImages/taliaferrowebsiteacttual.jpg",
+        "contributions": "Front End Dev.  UX Research/ Prototyping",
+        "description": "This is a personal project created to test my skills within Blender and physics simulations. This is one of the hardest ones I had to create as I had to utilise everything I've learned so far, including smoke, particle, flip fluid and rigid body simulations.",
+        "link": "https://www.instagram.com/p/ChmVvBtqxa5/"
     }
 }
